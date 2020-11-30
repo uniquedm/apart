@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Objective
@@ -21,6 +22,12 @@ public class ObjectiveSystem : MonoBehaviour
 
     public GameObject objectivePanel;
     public GameObject memoButton;
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        objectiveNo = 0;
+        objectivesCreated = new List<GameObject>();
+    }
 
     void Awake()
     {
