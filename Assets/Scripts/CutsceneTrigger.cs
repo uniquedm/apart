@@ -7,6 +7,8 @@ public class CutsceneTrigger : MonoBehaviour
 {
     bool triggered=false;
     public PlayableDirector cutscene;
+    public AudioSource musicSource;
+    public AudioClip musicClip;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +16,9 @@ public class CutsceneTrigger : MonoBehaviour
         {
             triggered = true;
             cutscene.Play();
+            musicSource.clip = musicClip;
+            musicSource.loop = true;
+            musicSource.Play();
         }
     }
 }

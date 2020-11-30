@@ -21,6 +21,7 @@ public class FollowInteraction : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) && canInteract)
         {
             pathFollower.enabled = true;
+            enabled = false;
         }
     }
 
